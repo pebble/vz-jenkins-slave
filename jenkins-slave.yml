@@ -27,7 +27,9 @@ packages:
   mirror: https://cloudfront.debian.net/debian
   install_standard: false
   trusted-keys:
-    - /etc/apt/trusted.gpg
+    - /etc/apt/trusted.gpg.d/debian-archive-jessie-automatic.gpg
+    - /etc/apt/trusted.gpg.d/debian-archive-jessie-security-automatic.gpg
+    - /etc/apt/trusted.gpg.d/debian-archive-jessie-stable.gpg
     - /app/manifests/docker.gpg
   sources:
     docker:
