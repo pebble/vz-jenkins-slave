@@ -1,0 +1,44 @@
+---
+name: jenkins-slave-{system.release}-{system.architecture}-{provider.virtualization}-{%Y}-{%m}-{%d}
+provider:
+  name: ec2
+  virtualization: hvm
+  enhanced_networking: simple
+  description: Debian {system.release} {system.architecture}
+bootstrapper:
+  workspace: /target
+  include_packages:
+    - apt-transport-https
+system:
+  release: jessie
+  architecture: amd64
+  bootloader: extlinux
+  charmap: UTF-8
+  locale: en_US
+  timezone: UTC
+volume:
+  backing: ebs
+  partitions:
+    type: none
+    root:
+      filesystem: ext4
+      size: 4GiB
+packages:
+  mirror: https://cloudfront.debian.net/debian
+  install_standard: false
+  trusted-keys:
+    - /etc/apt/trusted.gpg
+    - /app/manifests/docker.gpg
+  sources:
+    docker:
+      - deb http://apt.dockerproject.org/repo/ debian-jessie main
+  install:
+    - openjdk-7-jre-headless
+    - docker-engine
+plugins:
+  cloud_init:
+    metadata_sources: Ec2
+    username: jenkins
+    groups:
+      - docker
+
