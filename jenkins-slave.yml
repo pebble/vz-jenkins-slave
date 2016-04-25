@@ -1,5 +1,5 @@
 ---
-name: jenkins-slave-{system.release}-{system.architecture}-{provider.virtualization}-{%Y}-{%m}-{%d}
+name: jenkins-slave-{system.release}-{system.architecture}-{provider.virtualization}-{%Y}{%m}{%d}T{%H}{%M}{%S}
 provider:
   name: ec2
   virtualization: hvm
@@ -37,6 +37,7 @@ packages:
   install:
     - openjdk-7-jre-headless
     - docker-engine
+    - git
 plugins:
   cloud_init:
     metadata_sources: Ec2
