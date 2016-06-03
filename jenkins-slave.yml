@@ -38,6 +38,7 @@ packages:
     - openjdk-7-jre-headless
     - docker-engine
     - git
+    - aufs-tools
 plugins:
   cloud_init:
     metadata_sources: Ec2
