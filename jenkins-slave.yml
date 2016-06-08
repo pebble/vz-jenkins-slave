@@ -12,14 +12,14 @@ bootstrapper:
 system:
   release: jessie
   architecture: amd64
-  bootloader: extlinux
+  bootloader: grub
   charmap: UTF-8
   locale: en_US
   timezone: UTC
 volume:
   backing: ebs
   partitions:
-    type: none
+    type: gpt
     root:
       filesystem: ext4
       size: 4GiB
@@ -45,4 +45,6 @@ plugins:
     username: jenkins
     groups:
       - docker
-
+  ec2_publish:
+    manifest_url: https://pebble-amis.s3-us-west-2.amazonaws.com/jenkins.json
+    public: true
