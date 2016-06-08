@@ -22,7 +22,7 @@ volume:
     type: gpt
     root:
       filesystem: ext4
-      size: 4GiB
+      size: 20GiB
 packages:
   mirror: https://cloudfront.debian.net/debian
   install_standard: false
