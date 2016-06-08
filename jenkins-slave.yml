@@ -12,14 +12,14 @@ bootstrapper:
 system:
   release: jessie
   architecture: amd64
-  bootloader: extlinux
+  bootloader: grub
   charmap: UTF-8
   locale: en_US
   timezone: UTC
 volume:
   backing: ebs
   partitions:
-    type: none
+    type: gpt
     root:
       filesystem: ext4
       size: 4GiB
