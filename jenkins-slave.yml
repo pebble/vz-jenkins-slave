@@ -49,5 +49,5 @@ plugins:
     packages:
       - docker-compose==1.7.1
   ec2_publish:
-    manifest_url: https://s3-us-west-2.amazonaws.com/ami.pbl.io/jenkins/latest.json
+    manifest_url: https://pebble-amis.s3-us-west-2.amazonaws.com/jenkins/latest.json
     public: true
