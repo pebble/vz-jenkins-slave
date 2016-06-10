@@ -45,6 +45,9 @@ plugins:
     username: jenkins
     groups:
       - docker
+  pip_install:
+    packages:
+      - docker-compose==1.7.1
   ec2_publish:
     manifest_url: https://pebble-amis.s3-us-west-2.amazonaws.com/jenkins.json
     public: true
